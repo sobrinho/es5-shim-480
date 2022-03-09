@@ -31,6 +31,19 @@
 </template>
 
 <script>
+import { createContainer, asValue } from 'awilix'
+
+const container = createContainer()
+container.register({
+  container: asValue("dummy")
+})
+
+const cradle = container.cradle
+const expanded = { ...cradle }
+
+console.log(Object.keys(cradle))
+console.log(Object.keys(expanded))
+
 export default {
   name: 'HelloWorld',
   props: {
